@@ -2,9 +2,9 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
     id        = "com.phonegap.example"
-    version   = "1.0.0">
+    version   = "2.0.0">
 
-<name>GuestPortal</name>
+<name>GuestPortal2</name>
 
 <content src="index.html"/>
 
@@ -23,6 +23,7 @@ TravelMedia - By Alejandro Osorio 2013
 
 <access origin="190.145.24.146" browserOnly="true" />
 <access origin="http://190.145.24.146" browserOnly="true" />
+<access origin="http://wifienter.net" browserOnly="true" />
 <access origin="*" browserOnly="true" />
 
 </widget>

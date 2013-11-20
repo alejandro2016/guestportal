@@ -68,7 +68,6 @@ function loadURL(url){
        });
 }   
 </script>
-
 <div data-role="page" id="page">
 	<div data-role="header2">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/top1.png">
@@ -83,7 +82,7 @@ function loadURL(url){
 	         <td align="center"><p>Ingrese su Apellido y N&uacute;mero de habtiaci&oacute;n</p></td>
           </tr>
 	      <tr>
-	         <td align="center"><input name="login" type="text" id="login" value="HABITACI&Oacute;N" size="12"><input name="password" id="password" type="text" value="APELLIDO" size="15"></td>
+	         <td align="center"><input name="login" type="text" id="login" value="HABITACI&Oacute;N" size="12" onKeyUp="login()"><input name="password" id="password" type="text" value="APELLIDO" size="15" onKeyUp="login()"></td>
           </tr>
 	      <tr>
 	         <td align="center"><p>C&oacute;digo del Hotel (Obtengalo en recepci&oacute;n)</p></td>
@@ -94,12 +93,11 @@ function loadURL(url){
                     <tr>
           <td align="center"><input type="submit" value="enviar" name="btn_enviar" id="btn_enviar" onClick="login()">          </tr>
           	      <tr>
-	         <td>&nbsp;</td>
+	         <td><a href="#markets">Home</a></td>
           </tr>          
        </form></table>
 	   </div>
 </div>
-
 <div data-role="page" id="markets">
 	<div data-role="header">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/top1.png">
