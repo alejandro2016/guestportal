@@ -32,42 +32,7 @@ function loadURL(url){
  </script>
 </head> 
 <body>
-<script type="text/javascript">
- function login() {
-            $(document).ready(function() {
-           var user = $("#login").val();
-           var pass = $("#password").val();
-     $.ajax({
-            url: "http://http://190.145.24.146/app/testoi.php",  
-            type: "GET",        
-            data: { username: user, password: pass },     
-            cache: false,
-            success: function (html) {  
-            $(html).find('market').each(function(){
-			var market = $(this);
-			 var room = market.attr('room');
-				if (room != "" && room != "Login Failed") {
-                        var hab_db = market.attr('room');
-						var nom_db = market.attr('nombre');
-						var fol_db = market.attr('folio');
-						var sal_db = market.attr('salida');
-						var lle_db = market.attr('llegada');	
-						                        localStorage.setItem("roomdb", hab_db);
-												localStorage.setItem("nombredb", nom_db);
-												localStorage.setItem("foliodb", fol_db);
-												localStorage.setItem("salidadb", sal_db);
-												localStorage.setItem("llegadadb", lle_db);					
-						document.location.href = "#markets";
-                    } else {
-                        alert("Login Failed");
-                    }
-				
-				});      
-            }   
-          });
-       });
-}   
-</script>
+
 <div data-role="page" id="page">
 	<div data-role="header2">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/top1.png">
@@ -98,6 +63,45 @@ function loadURL(url){
        </form></table>
 	   </div>
 </div>
+<script type="text/javascript">
+ function login() {
+            $(document).ready(function() {
+           var user = $("#login").val();
+           var pass = $("#password").val();
+     //$.ajax({
+       $.get("http://190.145.24.146/app/testoi.php",{username: user, password: pass }, loginres, "json");    
+//			url: "http://190.145.24.146/app/testoi.php",  
+//            type: "GET",        
+//            data: { username: user, password: pass },     
+//            cache: false,
+//            success: 
+//			function (html) {  
+			function loginres(respuesta){
+//            $(html).find('market').each(function(){
+			//var market = $(this);
+			 //var room = market.attr('room');
+				if (respuesta.room != "" && respuesta.room != "Login Failed") {
+                        var hab_db = respuesta.room;
+						var nom_db = respuesta.nombre;
+						var fol_db = respuesta.folio;
+						var sal_db = respuesta.salida;
+						var lle_db = respuesta.llegada;	
+						                        localStorage.setItem("roomdb", hab_db);
+												localStorage.setItem("nombredb", nom_db);
+												localStorage.setItem("foliodb", fol_db);
+												localStorage.setItem("salidadb", sal_db);
+												localStorage.setItem("llegadadb", lle_db);					
+						document.location.href = "#markets";
+                    } else {
+                        alert("Login Failed");
+                    }
+				
+				//});      
+            }   
+          //});
+       });
+}   
+</script>
 <div data-role="page" id="markets">
 	<div data-role="header">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0" background="images/top1.png">
