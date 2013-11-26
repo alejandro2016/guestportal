@@ -42,30 +42,22 @@ $(document).ready(function(){
 
 <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="2"  >
    <tr>
-      <td width="50%" rowspan="3"><img src="images/lancaster1.png" width="83" height="106"></td>
-      <td width="50%" align="center"><p><strong>Hotel Lancaster House Bogota</strong></p></td>
+     <td><br><br><img src="images/lancaster1.png" width="90" height="110"><img src="images/titulohotel.png"><br>
+       <div id="saludo">
+        <p>Bienvenido apreciado Sr(a)<span></span></p></div>
+         <p>El hotel le desea un agradable y placida estad&iacute;a, <br />porfavor navegue en los menus de la aplicaci&oacute;n en donde <br />encontrara diversos servicios que el hotel tiene preparados para usted.</p><br><a href="#info_hotel" data-role="button">Información del Hotel</a>
+        </td>
    </tr>
-   <tr>
-      <td><div id="saludo">
-         <p>Bienvenido <span></span> el hotel le desea un agradable y placida estad&iacute;a.</p></div></td>
-      <script>
-	  
-						var nom = localStorage.getItem("nombredb");
-
-   $("#saludo span").html('Sr(a) '+nom);
-
-   </script>
-   </tr>
-</table>
+   </table>
 </div>
 <div data-role="footer" data-position="fixed"> 
 <table width="100%" height="50px" border="0" cellspacing="0" cellpadding="0" background="images/fondo.jpg" >
    <tr>
-      <td colspan="3" background="images/background-form.png"><a href="#page_all"><img src="images/m_guest.png" width="55" height="30"></a></td>
+      <td colspan="3" background="images/background-form.png"><a href="#page_osi"><img src="images/m_guest.png" width="55" height="30"></a></td>
       <td background="images/background-form.png"><a href="#page_olex"><img src="images/m_tools.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_osi"><img src="images/m_survey.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_embrun"><img src="images/m_chat.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_brussels"><img src="images/m_settings.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#page_all"><img src="images/m_survey.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#chat"><img src="images/m_chat.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#page_embrun"><img src="images/m_settings.png" width="55" height="30"></a></td>
    </tr>
 </table>
 </div>
@@ -140,33 +132,7 @@ $(document).ready(function(){
 </div>
 
 <div data-role="page" id="page_olex" data-add-back-btn="true">
-        <script type="text/javascript">
-            $("#page_olex").live('pagebeforecreate', function() {
-            $.get('http://190.145.24.146/app/testoi.php',function(data){
-                $('.content').empty();
-                $(data).find('huesped').each(function(){
-                    var $market = $(this);
-                    var html = '<div class="data">';                      
-                    html += '<div data-role="collapsible" data-collapsed="true" data-theme="b"><h3>' + $market.attr('room') + '</h3>';
-                    
-                    html += '<div data-role="collapsible" data-collapsed="true"><h3>Lambs</h3>';
-                    html += '<div class="ui-grid-b">';
-                    html += '<div class="ui-block-a grid-title">Head</div>';
-                    html += '<div class="ui-block-b grid-title">Avg $</div>';
-                    html += '<div class="ui-block-c grid-title">Avg Wgt</div>';
-                    html += '<div class="ui-block-a">' + $market.find('id').attr('nombre') + '</div>';                    
-                    html += '<div class="ui-block-b">' + $market.find('id').attr('registro') + '</div>';
-                    html += '<div class="ui-block-c">' + $market.find('id').attr('salida') + '</div>';
-                    html += '</div></div>';
-                    
-                    html += '</div></div>';
-                    $('#result2').append(html).trigger( "create" );
-                    $('#result2 .loading').remove();
-                });                           
-            });
-            });
-        </script>
-    <div data-role="header">
+        <div data-role="header">
             		<table width="100%" height="50px" border="0" cellspacing="0" background="images/top1.png">
    <tr>
       <td height="32"><img src="images/logo_small.png" width="120" height="40"></td>
@@ -182,7 +148,7 @@ $(document).ready(function(){
       <td align="center" ><a href="#printspot" data-role="button"><strong><p>IMPRESI&Oacute;N REM&Oacute;TA</p></strong></a></td>
    </tr>
       <tr>
-      <td align="center" ><a href="#vuelos" data-role="button"><strong><p>Intinerario de Vuelos</p></strong></a></td>
+      <td align="center" ><a href="#vuelos" data-role="button"><strong><p>INTINERARIO DE VUELOS</p></strong></a></td>
    </tr>
       <tr>
       <td align="center" ><a href="#clima" data-role="button"><strong><p>ESTADO DEL CLIMA</p></strong></a></td>
@@ -194,15 +160,16 @@ $(document).ready(function(){
 </table>
 </div>
 <div data-role="footer" data-position="fixed"> 
-<table width="100%" height="50px" border="0" cellspacing="0" background="images/fondo.jpg" >
+<table width="100%" height="50px" border="0" cellspacing="0" cellpadding="0" background="images/fondo.jpg" >
    <tr>
-      <td colspan="3" background="images/background-form.png"><a href="#page_all"><img src="images/m_guest.png" width="55" height="30"></a></td>
+      <td colspan="3" background="images/background-form.png"><a href="#page_osi"><img src="images/m_guest.png" width="55" height="30"></a></td>
       <td background="images/background-form.png"><a href="#page_olex"><img src="images/m_tools.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_osi"><img src="images/m_survey.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_embrun"><img src="images/m_chat.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_brussels"><img src="images/m_settings.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#page_all"><img src="images/m_survey.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#chat"><img src="images/m_chat.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#page_embrun"><img src="images/m_settings.png" width="55" height="30"></a></td>
    </tr>
-</table></div>
+</table>
+</div>
     </div>    
     </div>        
                 
@@ -280,8 +247,6 @@ $(document).ready(function(){
     
     <table width="100%" height="50px" border="0" cellspacing="0"  >
    <tr>
-     <td width="11%" rowspan="5" align="center" background="images/background-form.png"><a href="#page_brussels"><img src="images/cuenta.png" width="61" height="43"></a>
-     </td>
       <td width="89%" align="center"><p><strong>Hotel Lancaster House Bogota</strong></p></td></tr>
          <tr>
            <td align="left"><div id="p_nombre">
@@ -299,18 +264,19 @@ $(document).ready(function(){
                <p><strong>CHECKout DATE</strong> <span></span></p></div></td> </tr>
           <script>var p_sal = localStorage.getItem("salidadb");$("#p_sal span").html(': '+p_sal);</script>
       </table>
+      <a href="#page_brussels" data-role="button">Revisión de la Cuenta</a>
 </div>
 <div data-role="footer" data-position="fixed"> 
-<table width="100%" height="50px" border="0" cellspacing="0" background="images/fondo.jpg" >
+<table width="100%" height="50px" border="0" cellspacing="0" cellpadding="0" background="images/fondo.jpg" >
    <tr>
-      <td colspan="3" background="images/background-form.png"><a href="#page_all"><img src="images/m_guest.png" width="55" height="30"></a></td>
+      <td colspan="3" background="images/background-form.png"><a href="#page_osi"><img src="images/m_guest.png" width="55" height="30"></a></td>
       <td background="images/background-form.png"><a href="#page_olex"><img src="images/m_tools.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_osi"><img src="images/m_survey.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_embrun"><img src="images/m_chat.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_brussels"><img src="images/m_settings.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#page_all"><img src="images/m_survey.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#chat"><img src="images/m_chat.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#page_embrun"><img src="images/m_settings.png" width="55" height="30"></a></td>
    </tr>
-</table>                
-  </div>
+</table>
+</div>
 </div>
 
 <div data-role="page" id="page_embrun" data-add-back-btn="true">
@@ -339,15 +305,16 @@ $(document).ready(function(){
 </table>
 </div>
 <div data-role="footer" data-position="fixed"> 
-<table width="100%" height="50px" border="0" cellspacing="0" background="images/fondo.jpg" >
+<table width="100%" height="50px" border="0" cellspacing="0" cellpadding="0" background="images/fondo.jpg" >
    <tr>
-      <td colspan="3" background="images/background-form.png"><a href="#page_all"><img src="images/m_guest.png" width="55" height="30"></a></td>
+      <td colspan="3" background="images/background-form.png"><a href="#page_osi"><img src="images/m_guest.png" width="55" height="30"></a></td>
       <td background="images/background-form.png"><a href="#page_olex"><img src="images/m_tools.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_osi"><img src="images/m_survey.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_embrun"><img src="images/m_chat.png" width="55" height="30"></a></td>
-      <td background="images/background-form.png"><a href="#page_brussels"><img src="images/m_settings.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#page_all"><img src="images/m_survey.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#chat"><img src="images/m_chat.png" width="55" height="30"></a></td>
+      <td background="images/background-form.png"><a href="#page_embrun"><img src="images/m_settings.png" width="55" height="30"></a></td>
    </tr>
-</table>  </div>
+</table>
+</div>
     </div>    
     </div>        
                 
@@ -398,6 +365,63 @@ $(document).ready(function(){
     </div>    
     </div>        
                 
+    </div>
+</div>
+
+<div data-role="page" id="chat" data-add-back-btn="true">
+        <script type="text/javascript">
+            $("#page_all").live('pagebeforecreate', function() {
+    $.get('http://190.145.24.146/app/chat.php',function(data){
+                $('.content').empty();
+                $(data).find('market').each(function(){
+                    var $market = $(this);
+                    var html = '<div class="data">';                      
+                    html += '<div data-role="collapsible" data-collapsed="true" data-theme="b"><h3>' + $market.attr('nombre') + '</h3>';
+                    
+                    html += '<div data-role="collapsible" data-collapsed="true"><h3>Mensaje de Recepci&oacuten;n</h3>';
+                    html += '<div class="ui-grid-b">';
+                    html += '<div class="ui-block-a grid-title">Mensaje:</div>';
+                    html += '<div class="ui-block-a">' + $market.find('info').attr('pregunta') + '</div>';                    
+                    html += '</div></div>';
+					
+					 html += '<div data-role="collapsible" data-collapsed="true"><h3>Recados</h3>';
+                    html += '<div class="ui-grid-b">';
+                    html += '<div class="ui-block-a grid-title">Mensaje:</div>';
+                    html += '<div class="ui-block-a">' + $market.find('info2').attr('pregunta') + '</div>';                    
+                    html += '</div></div>';
+					
+					 html += '<div data-role="collapsible" data-collapsed="true"><h3>Eventos</h3>';
+                    html += '<div class="ui-grid-b">';
+                    html += '<div class="ui-block-a grid-title">Mensaje:</div>';
+                    html += '<div class="ui-block-a">' + $market.find('info3').attr('pregunta') + '</div>';                    
+                    html += '</div></div>';
+                    
+                    html += '</div></div>';
+                    $('#result').append(html).trigger( "create" );
+                    $('#result .loading').remove();
+                });                           
+            });
+            });
+        </script>
+    		    <div data-role="header">
+            <table width="100%" height="50px" border="0" cellspacing="0" background="images/top1.png">
+   <tr>
+      <td height="32"><img src="images/logo_small.png" width="120" height="40"></td>
+   </tr>
+</table>
+</div>
+    <div data-role="content">
+    
+    <div data-role="collapsible-set">
+    <div id="result">
+    <div class="loading"><table width="100%" height="50px" border="0" cellspacing="0">
+   <tr>
+      <td align="center"  ><p>Cargando Sistema de Mensajes...</td>
+   </tr>
+</table>
+</div>
+    </div>    
+    </div>               
     </div>
 </div>
 </body>
