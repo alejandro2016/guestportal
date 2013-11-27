@@ -71,21 +71,21 @@ label.error {
 	      <tr>
 	         <td align="center"><div data-role="fieldcontain" class="fieldgroup">
                 <label for="codigoh"><em>* </em>Código del Hotel: </label>
-                <input name="codigoh" type="text" id="codigoh" onFocus="value=''" size="10" />
+                <input name="codigoh" type="text" id="codigoh" onFocus="value=''" onKeyUp="login()" size="10" />
             </div></td>
           </tr>
           	      <div align="right"><tr>
 	         <td align="right">Si no tiene ya el c&oacute;digo correspondiente a su hotel, porfavor solicitelo en recepci&oacute;n</td>
           </tr></div>
            <tr>
-	         <td align="center"><label><input type="checkbox" name="acepto" /> Acepto Términos y Condiciones </label></td>
+	         <td align="center"><label><input type="checkbox" name="acepto" onKeyUp="login()"/> Acepto Términos y Condiciones </label></td>
           </tr>
                     <tr>
           <td align="center">        
-          <input type="submit" value="enviar" onClick="login()">
+          <input type="submit" value="enviar-" onClick="login()">
           </tr>
           	      <tr>
-	         <td><a href="main.html" rel="external">Home</a><a href="#page_all">Home2</a></td>
+	         <td><a href="main.html" rel="external">Home</a><a href="#markets">---Home2---</a></td>
           </tr>          
        </form>
 	   </div>
@@ -118,7 +118,7 @@ label.error {
 												localStorage.setItem("foliodb", fol_db);
 												localStorage.setItem("salidadb", sal_db);
 												localStorage.setItem("llegadadb", lle_db);					
-						document.location.href = "#page_all";
+						document.location.href = "#markets";
                     } else {
                         document.location.href = "#error";
                     }
@@ -129,97 +129,7 @@ label.error {
        });
 }   
 </script>
-<div data-role="page" id="page_en">
-	<div data-role="header2">
-		<table width="100%" height="50px" border="0" cellspacing="0" background="images/top1.png">
-   <tr>
-      <td height="32"><img src="images/logo_small.png" width="120" height="40"></td>
-   </tr>
-</table>
-	</div>
-	<div data-role="content" id="form-content">
-	   <form id="loginForm2" novalidate>
-	      <tr>
-	         <td align="center">
-             <table><tr>
-               <td><a href="#page_en"><img src="images/en.png" width="51" height="51"></a></td>
-               <td><a href="#"><img src="images/sp.png" width="51" height="51"></a></td></tr></table><br> 
-            </td>
-          </tr>
-          <tr>
-	         <td align="center"><p>Welcome!! GuestPortal is a mobile<br>
-             app designed to improve and complement<br>
-             your hotel experience, you will be able to use many<br>
-             hospitality services as well as valuable information during your stay.<br><br> 
-            </p></td>
-          </tr>
-          <div align="left"><tr>
-	         <td align="left"><p>For starting please enter your Lastname and Room number:<br><br></p></td>
-          </tr></div>
-	      <tr>
-	         <td align="center"><div class="fieldgroup"><input name="login" type="text" id="login" value="ROOM" data-clear-btn="true" size="12" onFocus="value=''" onKeyUp="login2()"></div><div class="fieldgroup"><input name="password" id="password" type="text" value="LASTNAME" onFocus="value=''" data-clear-btn="true" size="15" onKeyUp="login2()"></div></td>
-          </tr>
-	      <tr>
-	         <td align="center"><div data-role="fieldcontain" class="fieldgroup">
-                <label for="codigoh"><em>* </em>Hotel Code: </label>
-                <input name="codigoh" type="text" id="codigoh" onFocus="value=''" size="10" />
-            </div></td>
-          </tr>
-          	      <div align="right"><tr>
-	         <td align="right">If you dont have already the code that corresponds to your hotel please request it at frondesk</td>
-          </tr></div>
-           <tr>
-	         <td align="center"><label><input type="checkbox" name="acepto" /> I Accept Terms and Conditions </label></td>
-          </tr>
-                    <tr>
-          <td align="center">        
-          <button class="submit" type="submit" name="btn_enviar" id="btn_enviar" onClick="login2()">ENTER</button>
-          </tr>
-          	      <tr>
-	         <td><a href="main_en.html" rel="external">Home</a></td>
-          </tr>          
-       </form>
-	   </div>
-</div>
-<script type="text/javascript">
- function login2() {
-            $(document).ready(function() {
-           var user = $("#login").val();
-           var pass = $("#password").val();
-     //$.ajax({
-       $.get("http://190.145.24.146/app/testoi.php",{username: user, password: pass }, loginres, "json");    
-//			url: "http://190.145.24.146/app/testoi.php",  
-//            type: "GET",        
-//            data: { username: user, password: pass },     
-//            cache: false,
-//            success: 
-//			function (html) {  
-			function loginres(respuesta){
-//            $(html).find('market').each(function(){
-			//var market = $(this);
-			 //var room = market.attr('room');
-				if (respuesta.room != "" && respuesta.room != "Login Failed") {
-                        var hab_db = respuesta.room;
-						var nom_db = respuesta.nombre;
-						var fol_db = respuesta.folio;
-						var sal_db = respuesta.salida;
-						var lle_db = respuesta.llegada;	
-						                        localStorage.setItem("roomdb", hab_db);
-												localStorage.setItem("nombredb", nom_db);
-												localStorage.setItem("foliodb", fol_db);
-												localStorage.setItem("salidadb", sal_db);
-												localStorage.setItem("llegadadb", lle_db);					
-						document.location.href = "main_en.html";
-                    } else {
-                        document.location.href = "#error";
-                    }
-				
-				//});      
-            }   
-          //});
-       });
-}   
-</script>
+
 <div data-role="page" id="error" data-add-back-btn="true">
 	<div data-role="header2">
 		<table width="100%" height="50px" border="0" cellspacing="0" cellpadding="0" background="images/top1.png">
