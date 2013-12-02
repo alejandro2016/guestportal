@@ -27,8 +27,7 @@ function handleLogin() {
                 //store
                 window.localStorage["username"] = u;
                 window.localStorage["password"] = p;
-				console.log("Loggeado y Transfiero a main");             
-                $.mobile.changePage("main.html");
+				console.log("Loggeado y Transfiero a main");                $.mobile.changePage("main.html");
             } else {
                 navigator.notification.alert("Your login failed", function() {});
 				console.log("Fallo Login");

@@ -17,18 +17,7 @@ p {
 	font-size: 13px !important;
 	color: #FFF !important;
 }
-#alertdiv{
-    position:absolute;   
-}
 </style>
-
-<script type="text/javascript">
-$(document).ready(function(){
-    var toppos=($(window).height()/2) - ($("#alertdiv").height()/2);
-    var leftpos=($(window).width()/2) - ($("#alertdiv").width()/2);
-    $("#alertdiv").css("top", toppos).css("left",leftpos);
-});
-</script>
 </head> 
 <body>
 <div data-role="page" id="markets">
@@ -208,8 +197,7 @@ $(document).ready(function(){
 </table>
     </div>
     <div data-role="content">
-        <div id="TT_vCfAbhdhtltBt8cKKfSzjzzzj7lKLQrlrY1t1kE1Ek1"><script type="text/javascript" src="http://www.tutiempo.net/widget/eltiempo_vCfAbhdhtltBt8cKKfSzjzzzj7lKLQrlrY1t1kE1Ek1"></script></div>
-    </div>
+         </div>
 </div>
 <div data-role="page" id="page_osi" data-add-back-btn="true">
         <script type="text/javascript">
@@ -251,11 +239,11 @@ $(document).ready(function(){
          <tr>
            <td align="left"><div id="p_nombre">
             <p><strong>NOMBRE</strong> <span></span></p></div> </td> </tr>       
-                      <script>var p_nom = localStorage.getItem("nombredb");$("#p_nombre span").html(': '+p_nom);</script>
+                      <script>var p_nom = localStorage.getItem("password");$("#p_nombre span").html(': '+p_nom);</script>
             <tr>
               <td align="left"><div id="p_fol">
                <p><strong>No FOLIO</strong> <span></span></p></div></td> </tr>         
-                      <script>var p_fol = localStorage.getItem("foliodb");$("#p_fol span").html(': '+p_fol);</script>
+                      <script>var p_fol = localStorage.getItem("username");$("#p_fol span").html(': '+p_fol);</script>
             <tr>
               <td align="left"><div id="p_lle"><p><strong>CHECKin DATE</strong> <span></span></p></div></td>
    </tr>          <script>var p_lle = localStorage.getItem("llegadadb");$("#p_lle span").html(': '+p_lle);</script>
