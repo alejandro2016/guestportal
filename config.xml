@@ -2,11 +2,12 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap = "http://phonegap.com/ns/1.0"
     id        = "com.phonegap.example"
-    version   = "4.0.0">
+    version   = "5.0.0">
 
-<name>GuestPortal4</name>
+<name>GuestPortal5</name>
 
 <content src="index.html"/>
+<content src="main.html"/>
 
 <description>
 Powerfull Guest Tools for hospitality services.
