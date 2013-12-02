@@ -7,10 +7,12 @@
 <link rel="stylesheet" href="jquery.mobile.structure-1.3.2.css" />
 <link rel="stylesheet" href="guestportal5.css" />
         <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova-1.8.1.js"></script>
         <script type="text/javascript" src="jquery.mobile-1.3.2.min.js"></script>
 <script type="text/javascript" src="jquery.validate.min.js"></script>       
 <script type="text/javascript" src="validador.js"></script>
 <link href="css/css.css" rel="stylesheet" type="text/css"/>
+<script src="main.js"></script>
 <style type="text/css">
 .ui-body-c, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button{
         font-size: 16px !important;
@@ -36,9 +38,17 @@ label.error {
 
 </style>
 </head> 
-<body>
+<body onload="init()">
 
-<div data-role="page" id="page">
+<div id="launcherPage" data-role="page">
+	<table width="100%" height="100%" border="0" cellspacing="0" background="images/top1.png">
+   <tr>
+      <td align="center" height="32"><img src="images/logo_small.png" width="120" height="40"></td>
+   </tr>
+</table>
+</div>
+
+<div data-role="page" id="loginPage">
 	<div data-role="header">
 		<table width="100%" height="50px" border="0" cellspacing="0" background="images/top1.png">
    <tr>
@@ -66,7 +76,7 @@ label.error {
 	         <td align="left"><p>Para iniciar porfavor ingrese su Apellido y N&uacute;mero de habitaci&oacute;n :<br><br></p></td>
           </tr></div>
 	      <tr>
-	         <td align="center"><div class="fieldgroup"><input name="login" type="text" id="login" value="HABITACI&Oacute;N" data-clear-btn="true" size="12" onFocus="value=''" onKeyUp="login()"></div><div class="fieldgroup"><input name="password" id="password" type="text" value="APELLIDO" onFocus="value=''" data-clear-btn="true" size="15" onKeyUp="login()"></div></td>
+	         <td align="center"><div class="fieldgroup"><input name="username" id="username" value="" placeholder="Habitación"  data-clear-btn="true" size="12" ></div><div class="fieldgroup"><input type="text" data-clear-btn="true" size="15" name="password" id="password" value="" placeholder="Apellido" ></div></td>
           </tr>
 	      <tr>
 	         <td align="center"><div data-role="fieldcontain" class="fieldgroup">
@@ -82,7 +92,7 @@ label.error {
           </tr>
                     <tr>
           <td align="center">        
-          <button class="submit" type="submit" name="btn_enviar" id="btn_enviar" onClick="login()">ENTRAR</button>
+          <input type="submit" value="ENTRAR" id="submitButton">
           </tr>
           	      <tr>
 	         <td><a href="main.html#markets" rel="external">Home</a></td>
@@ -90,44 +100,5 @@ label.error {
        </form>
 	   </div>
 </div>
-<script type="text/javascript">
- function login() {
-            $(document).ready(function() {
-           var user = $("#login").val();
-           var pass = $("#password").val();
-     //$.ajax({
-       $.get("http://190.145.24.146/app/testoi.php",{username: user, password: pass }, loginres, "json");    
-//			url: "http://190.145.24.146/app/testoi.php",  
-//            type: "GET",        
-//            data: { username: user, password: pass },     
-//            cache: false,
-//            success: 
-//			function (html) {  
-			function loginres(respuesta){
-//            $(html).find('market').each(function(){
-			//var market = $(this);
-			 //var room = market.attr('room');
-				if (respuesta.room != "" && respuesta.room != "Login Failed") {
-                        var hab_db = respuesta.room;
-						var nom_db = respuesta.nombre;
-						var fol_db = respuesta.folio;
-						var sal_db = respuesta.salida;
-						var lle_db = respuesta.llegada;	
-						                        localStorage.setItem("roomdb", hab_db);
-												localStorage.setItem("nombredb", nom_db);
-												localStorage.setItem("foliodb", fol_db);
-												localStorage.setItem("salidadb", sal_db);
-												localStorage.setItem("llegadadb", lle_db);					
-						 alert( "hab_db nom_db" );
-                    } else {
-                        document.location.href = "main.html";
-                    }
-				
-				//});      
-            }   
-          //});
-       });
-}   
-</script>
 </body>
 </html>
