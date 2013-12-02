@@ -8,11 +8,9 @@
 <link rel="stylesheet" href="guestportal5.css" />
         <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="cordova-1.8.1.js"></script>
-        <script type="text/javascript" src="jquery.mobile-1.3.2.min.js"></script>
-<script type="text/javascript" src="jquery.validate.min.js"></script>       
-<script type="text/javascript" src="validador.js"></script>
-<link href="css/css.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="jquery.mobile-1.3.2.min.js"></script> 
 <script src="main.js"></script>
+<link href="css/css.css" rel="stylesheet" type="text/css"/>
 <style type="text/css">
 .ui-body-c, .ui-body-c input, .ui-body-c select, .ui-body-c textarea, .ui-body-c button{
         font-size: 16px !important;
@@ -41,14 +39,10 @@ label.error {
 <body onload="init()">
 
 <div id="launcherPage" data-role="page">
-	<table width="100%" height="100%" border="0" cellspacing="0" background="images/top1.png">
-   <tr>
-      <td align="center" height="32"><img src="images/logo_small.png" width="120" height="40"></td>
-   </tr>
-</table>
+<!-- I'm just here waiting for deviceReady -->
 </div>
 
-<div data-role="page" id="loginPage">
+<div id="loginPage" data-role="page">
 	<div data-role="header">
 		<table width="100%" height="50px" border="0" cellspacing="0" background="images/top1.png">
    <tr>
@@ -56,8 +50,8 @@ label.error {
    </tr>
 </table>
 	</div>
-	<div data-role="content" id="form-content">
-	   <form id="loginForm" novalidate>
+	<div data-role="content">
+	   <form id="loginForm">
 	      <tr>
 	         <td align="center">
              <table><tr>
@@ -76,20 +70,11 @@ label.error {
 	         <td align="left"><p>Para iniciar porfavor ingrese su Apellido y N&uacute;mero de habitaci&oacute;n :<br><br></p></td>
           </tr></div>
 	      <tr>
-	         <td align="center"><div class="fieldgroup"><input name="username" id="username" value="" placeholder="Habitación"  data-clear-btn="true" size="12" ></div><div class="fieldgroup"><input type="text" data-clear-btn="true" size="15" name="password" id="password" value="" placeholder="Apellido" ></div></td>
-          </tr>
-	      <tr>
-	         <td align="center"><div data-role="fieldcontain" class="fieldgroup">
-                <label for="codigoh"><em>* </em>Código del Hotel: </label>
-                <input name="codigoh" type="text" id="codigoh" onFocus="value=''" size="10" />
-            </div></td>
+	         <td align="center"><div data-role="fieldcontain" class="ui-hide-label"><input type="text" name="username" id="username" value="" placeholder="Habitación"  data-clear-btn="true" size="12" ></div><div data-role="fieldcontain" class="ui-hide-label"><input type="text" data-clear-btn="true" size="15" name="password" id="password" value="" placeholder="Apellido" ></div></td>
           </tr>
           	      <div align="right"><tr>
 	         <td align="right">Si no tiene ya el c&oacute;digo correspondiente a su hotel, porfavor solicitelo en recepci&oacute;n</td>
           </tr></div>
-           <tr>
-	         <td align="center"><label><input type="checkbox" name="acepto" /> Acepto Términos y Condiciones </label></td>
-          </tr>
                     <tr>
           <td align="center">        
           <input type="submit" value="ENTRAR" id="submitButton">

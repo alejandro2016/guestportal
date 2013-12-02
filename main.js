@@ -1,6 +1,6 @@
-// JavaScript Document
 function init() {
 	document.addEventListener("deviceready", deviceReady, true);
+	console.log("borro init");
 	delete init;
 }
  
